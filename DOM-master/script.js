@@ -1,24 +1,27 @@
 window.onload = function() {
     // Lyssna efter händelser
+    const profiles = document.querySelectorAll(".profile");
 
+    profiles.forEach((img) => {
+        // Наведение мыши на изображение — применить эффект
+        img.addEventListener("mouseover", () => {
+            effectOn(img.id);
+        });
 
+        // Уводим мышь — убираем эффект
+        img.addEventListener("mouseout", () => {
+            effectOff(img.id);
+        });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+        // Клик на изображение — меняем должность через prompt
+        img.addEventListener("click", (e) => {
+            editTitle(e);
+        });
+    });
 }
+
+
+
 var editTitle = function(e) {
     // Ändra "team-title"
 };
